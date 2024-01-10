@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 import LandingPage from './components/LandingPage';
 import Cards from './components/Cards';
 import SkeletonCards from './components/SkeletonCards.js'
-import Analytics from './components/Analytics';
 import Newsletter from './components/Newsletter';
 import StateComparison from './components/StateComparison'; 
 
@@ -38,10 +37,9 @@ function App() {
     <div>
       <Navbar />
       <LandingPage /> 
-      {/*<Analytics />*/}
-      {/*<Newsletter />*/}
       {/*<Cards />*/}
       <StateComparison /> 
+      <Newsletter />
       <Footer />
     </div>
   );

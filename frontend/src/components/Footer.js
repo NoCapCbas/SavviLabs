@@ -1,4 +1,5 @@
 import React from 'react';
+import SavviLabsLogo from '../assets/savviLabs.svg'
 import {
   FaDribbbleSquare,
   FaFacebookSquare,
@@ -11,7 +12,7 @@ const Footer = () => {
   return (
     <div className='max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300'>
       <div>
-        <h1 className='w-full text-3xl font-bold text-[#00df9a]'>REACT.</h1>
+        <img src={SavviLabsLogo} alt="Savvi Labs Logo" className="w-1/9 text-3xl font-bold"/>
         <p className='py-4'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit ullam iste repellat consequatur libero reiciendis, blanditiis accusantium.</p>
         <div className='flex justify-between md:w-[75%] my-6'>
             <FaFacebookSquare size={30} />

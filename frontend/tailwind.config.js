@@ -4,7 +4,14 @@ module.exports = {
     "./public/index.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#7208FF',
+        secondary: '#FFFFFF',
+        accent: '#00FFF7',
+        background: '#000300'
+      }
+    },
   },
   plugins: [],
 };

@@ -53,5 +53,3 @@ Open a bash session in a running container:
 - To validate that the static files are being served correctly, you can visit 0.0.0.0:80/admin. This endpoint will show you the admin page with the correct style used.
 Gunicorn does not serve static files, so if you visit 0.0.0.0:8000/admin - the admin page will pop up without the default style.
 
-## Data Source
-https://www.zillow.com/research/data/
