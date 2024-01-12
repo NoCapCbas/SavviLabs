@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const HackingText = ({ word, speed = 100, settleTime = 500 }) => {
-  const [display, setDisplay] = useState('_'.repeat(word ? word.length : 0));
+const HackingText = ({ word = '', speed = 100, settleTime = 500 }) => {
+  const [display, setDisplay] = useState('_'.repeat(word.length));
   const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
   useEffect(() => {
@@ -25,14 +25,9 @@ const HackingText = ({ word, speed = 100, settleTime = 500 }) => {
           clearInterval(randomInterval);
           return;
         }
-        setDisplay(prev => {
-          return prev.split('').map((char, index) => {
-            if (char !== word[index]) {
-              return characters[Math.floor(Math.random() * characters.length)];
-            }
-            return char;
-          }).join('');
-        });
+        setDisplay((prev) => prev.split('').map((char, index) => {
+          return char !== word[index] ? characters[Math.floor(Math.random() * characters.length)] : char;
+        }).join(''));
       }, speed);
 
       setTimeout(() => {

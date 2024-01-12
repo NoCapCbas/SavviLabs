@@ -1,5 +1,7 @@
 import React from 'react';
 import HackingTextEffect from './HackingTextEffect.js'
+import EmailIcon from '../assets/email.svg'
+
 
 const LandingPage = () => {
   return (
@@ -19,7 +21,10 @@ const LandingPage = () => {
           */}
         </div>
         <p className='md:text-2xl text-xl font-bold text-gray-500'>Savvi Labs is a small team specializing in custom web scraping services. We scrape</p>
-        <button className='bg-primary w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-white'>Get in touch</button>
+        <button className='flex items-center bg-primary w-[200px] rounded-full font-bold my-6 mx-auto py-3 text-white hover:bg-tertiary transition duration-300'>
+    <img src={EmailIcon} className="mr-2 h-6 w-6"/>
+    Get in touch
+    </button>
       </div>
     </div>
   );

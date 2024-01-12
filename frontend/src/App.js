@@ -38,7 +38,7 @@ function App() {
       <Navbar />
       <LandingPage /> 
       {/*<Cards />*/}
-      <StateComparison /> 
+      {/*<StateComparison />*/} 
       <Newsletter />
       <Footer />
     </div>
