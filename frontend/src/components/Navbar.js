@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import SavviLabsLogo from '../assets/savviLabs.svg'
-import EmailIcon from '../assets/email.svg'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 const Navbar = () => {
@@ -15,14 +14,8 @@ const Navbar = () => {
     <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white bg-background'>
       <img src={SavviLabsLogo} alt="Savvi Labs Logo" className="w-1/9 text-3xl font-bold"/>
       <ul className='hidden md:flex'>
-        <li className='p-4 hover:text-gray'><a href="#" className="no-underline text-current hover:text-tertiary">Home</a></li>
-        <li className='p-4 hover:text-gray'><a href="#" className="no-underline text-current hover:text-tertiary">Services</a></li>
-        <li className='flex items-center p-4 hover:text-gray'>
-          <a href="#" className="no-underline text-current">
-            <img src={EmailIcon} className="mr-2 h-6 w-6" alt=""/>
-            Contact
-          </a>
-        </li>
+        <li className='p-4 hover:text-gray'><a href="#" className="no-underline text-current hover:text-tertiary">Products</a></li>
+        <li className='p-4 hover:text-gray'><a href="#" className="no-underline text-current hover:text-tertiary">Resources</a></li>
       </ul>
       <div onClick={handleNav} className='block md:hidden'>
           {nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20} />}

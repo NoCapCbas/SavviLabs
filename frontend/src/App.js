@@ -3,11 +3,10 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import LandingPage from './components/LandingPage';
-import Cards from './components/Cards';
-import SkeletonCards from './components/SkeletonCards.js'
+import Hero from './components/Hero';
 import Newsletter from './components/Newsletter';
-import StateComparison from './components/StateComparison'; 
+import Blog from './components/Blog';
+
 
 
 
@@ -36,9 +35,8 @@ function App() {
   return (
     <div>
       <Navbar />
-      <LandingPage /> 
-      {/*<Cards />*/}
-      {/*<StateComparison />*/} 
+      <Hero /> 
+      <Blog />
       <Newsletter />
       <Footer />
     </div>

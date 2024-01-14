@@ -1,5 +1,6 @@
 # Virtual environment
 venv/
+**/venv
 
 # Compiled Python files
 *.pyc
@@ -10,4 +11,11 @@ __pycache__/
 
 # Environment variables
 .env
+
+# Ignore Node.js module folder and npm log files
+node_modules/
+**/node_modules
+npm-debug.log
+npm-error.log
+package-lock.json
 

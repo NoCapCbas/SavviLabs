@@ -1,2 +1,49 @@
+# Ignore Python compiled files and virtual environment directories
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.Python
+env/
 venv/
+**/venv
+pip-log.txt
+pip-delete-this-directory.txt
 
+# Ignore Node.js module folder and npm log files
+node_modules/
+**/node_modules
+npm-debug.log
+npm-error.log
+package-lock.json
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files and directories
+.idea/
+*.swp
+*.swo
+*~
+.vscode/
+
+# Ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Ignore other unnecessary files
+*.tar
+*.tgz
+*.tmp
+TODO.md
+Dockerfile.*
+docker-compose*.yml
+
+# Environment variables
+.env
