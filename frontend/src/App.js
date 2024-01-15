@@ -20,17 +20,17 @@ const client = axios.create({
 
 function App() {
 
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    client.get("/api/hello")
-    .then(function(res) {
-      setMessage(res.data.message);
-    })
-    .catch(function(error) {
-      setMessage('Error');
-    });
-  }, []);
+  // const [message, setMessage] = useState('');
+  //
+  // useEffect(() => {
+  //   client.get("/api/hello")
+  //   .then(function(res) {
+  //     setMessage(res.data.message);
+  //   })
+  //   .catch(function(error) {
+  //     setMessage('Error');
+  //   });
+  // }, []);
 
   return (
     <div>

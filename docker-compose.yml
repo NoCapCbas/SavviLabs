@@ -11,7 +11,7 @@ services:
     env_file:
       - .env
     volumes:
-      - static:/static
+      - static:/app/static
 
   frontend:
     container_name: savvi_frontend

@@ -1,6 +1,18 @@
-from django.http import JsonResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
-def hello_world(request):
-    return JsonResponse({
-        "message": "Hello, World!"
-        })
+
+def getRoutes(request):
+    data = [
+        {
+            'Endpoint', '/products',
+            'method', 'GET', 
+            'body', None,
+            'description', 'Returns nothing'
+        },
+        {
+            'Endpoint', '/resources'
+        },
+    ]
+    return Response(data) 
+
