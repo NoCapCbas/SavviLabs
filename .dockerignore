@@ -3,16 +3,16 @@
 *.pyo
 *.pyd
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-__pycache__/
+**/__pycache__
+*.py_/
 .Python
 env/
 venv/
 **/venv
 pip-log.txt
 pip-delete-this-directory.txt
+migrations/
+**/migrations
 
 # Ignore Node.js module folder and npm log files
 node_modules/

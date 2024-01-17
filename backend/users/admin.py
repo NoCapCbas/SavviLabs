@@ -1,12 +1,12 @@
 from django.contrib import admin
-from api.models import User, Profile
+from . import models
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ['username', 'email']
 
-class Profile(admin.ModelAdmin):
-    list_editable = ['user', 'first_name', 'last_name', 'verfified']
-    list_display = ['user', 'first_name', 'last_name', 'verfified']
+class ProfileAdmin(admin.ModelAdmin):
+    list_editable = ['first_name', 'last_name', 'verified']
+    list_display = ['user', 'first_name', 'last_name', 'verified']
 
-admin.site.register(User, UserAdmin)
-admin.site.register(Profile, ProfileAdmin)
+admin.site.register(models.User, UserAdmin)
+admin.site.register(models.Profile, ProfileAdmin)

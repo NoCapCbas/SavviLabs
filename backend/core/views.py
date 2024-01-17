@@ -1,8 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-
-def getRoutes(request):
+def get_routes(request):
     data = [
         {
             'Endpoint', '/products',

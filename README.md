@@ -32,6 +32,16 @@ Bring services down:
 Open a bash session in a running container:
 `docker exec -it <container ID> /bin/bash`
 
+Use to restart a service:
+`docker compose up --build -d --force-recreate --no-deps backend`
+`docker compose up --build -d --force-recreate --no-deps frontend`
+`docker compose up --build -d --force-recreate --no-deps nginx`
+`docker compose up --build -d --force-recreate --no-deps postgres_db`
+
+
+
+
+
 
 ## Flow
 

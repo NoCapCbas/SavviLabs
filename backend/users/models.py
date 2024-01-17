@@ -17,7 +17,7 @@ class Profile(models.Model):
 
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    image = ImageField(default="default.jpg", upload_to="user_images")
+    image = models.ImageField(default="default.jpg", upload_to="user_images")
     verified = models.BooleanField(default=False)
 
     def __str__(self):

@@ -1,17 +1,29 @@
 version: '3.7'
 
 services: 
+  postgres_db:
+    image: postgres:16.1
+    container_name: savvi_postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: savvi
+      POSTGRES_PASSWORD: cbas
+    # restart: always # only on deployment
+
   backend:
     container_name: savvi_backend
     build: 
       context: ./backend
     ports: 
       - "8000:8000"
-    restart: always
+    # restart: always # only on deployment
     env_file:
       - .env
     volumes:
       - static:/app/static
+    depends_on:
+      - postgres_db
 
   frontend:
     container_name: savvi_frontend
@@ -32,8 +44,8 @@ services:
     depends_on:
       - backend
       - frontend
-
+ 
 volumes:
   static:
   frontend:
-
+  postgres_data:

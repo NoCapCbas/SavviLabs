@@ -1,6 +1,17 @@
-from django.http import JsonResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
-def index(request):
-    return JsonResponse({
-        "message": "Hello, world"
-    })
+def get_routes(request):
+    data = [
+        {
+            'Endpoint', '/users',
+            'method', 'GET', 
+            'body', None,
+            'description', 'Returns a list of users'
+        },
+        {
+            'Endpoint', '/resources'
+        },
+    ]
+    return Response(data) 
+
