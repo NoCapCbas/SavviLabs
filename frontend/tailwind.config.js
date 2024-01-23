@@ -11,7 +11,10 @@ module.exports = {
         tertiary: '#8B7AF4',
         accent: '#61DAFB',
         background: '#000300'
-      }
+      },
+      backgroundImage: theme => ({
+        'svg-pattern': "url('./assets/hero-gradient-bg.svg')",
+      })
     },
   },
   plugins: [],

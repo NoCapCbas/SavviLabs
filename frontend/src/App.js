@@ -1,11 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Hero from './components/Hero';
-import Newsletter from './components/Newsletter';
-import Blog from './components/Blog';
+import Navbar from './components/core/Navbar';
+import Footer from './components/core/Footer';
+import Hero from './components/core/Hero';
+import Newsletter from './components/core/Newsletter';
+// import Blog from './components/Blog';
+// import Login from './components/users/Login';
 
 
 
@@ -34,9 +35,9 @@ function App() {
 
   return (
     <div>
-      <Navbar />
-      <Hero /> 
-      <Blog />
+      <Navbar /> 
+      <Hero />
+      {/* <Blog />*/}
       <Newsletter />
       <Footer />
     </div>

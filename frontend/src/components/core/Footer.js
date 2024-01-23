@@ -1,5 +1,5 @@
 import React from 'react';
-import SavviLabsLogo from '../assets/savviLabs.svg';
+// import SavviLabsLogo from '../assets/savviLabs.svg';
 import {
   FaFacebookSquare,
   FaGithubSquare,
@@ -9,15 +9,17 @@ import {
 
 const Footer = () => {
   return (
-    <div className='max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300'>
+    <section className='max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300'>
       {/* Socials */}
       <div className="items-center justify-center">
+        {/*
         <img src={SavviLabsLogo} alt="Savvi Labs Logo" className="w-1/9 text-3xl font-bold"/>
         <div className='flex justify-between md:w-[50%] my-3'>
             <FaFacebookSquare size={30} />
             <FaInstagram size={30} />
             <FaTwitterSquare size={30} />
         </div>
+        */}
       </div>
       {/* Useful Links */}
       <div className='lg:col-span-2 flex justify-end items-center mt-6'>
@@ -32,7 +34,7 @@ const Footer = () => {
       </div>
       {/* Legal */}
       <div className="flex flex-col lg:flex-row gap-8 justify-between items-center lg:col-span-3 w-full">
-        <p className="mt-4 text-xs text-white order-2 lg:order-1 lg:w-1/3">© <a>Savvi Labs</a></p>
+        <p className="mt-4 text-xs text-white order-2 lg:order-1 lg:w-1/3">© <a>Savvi Labs.</a> All rights reserved.</p>
         {/*
         <ul className="flex flex-col lg:flex-row lg:space-x-6 mb-0 items-center text-xs order-1 lg:order-2 lg:w-2/3">
           <li className="flex-1">
@@ -58,7 +60,7 @@ const Footer = () => {
         </ul>
         */}
       </div>     
-    </div>
+    </section>
   );
 };
 
