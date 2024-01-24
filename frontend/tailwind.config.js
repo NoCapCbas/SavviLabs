@@ -12,9 +12,9 @@ module.exports = {
         accent: '#61DAFB',
         background: '#000300'
       },
-      backgroundImage: theme => ({
-        'svg-pattern': "url('./assets/hero-gradient-bg.svg')",
-      })
+      fontFamily: {
+        mono: ['"Space Mono"', 'monospace']
+      },
     },
   },
   plugins: [],

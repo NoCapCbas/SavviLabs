@@ -9,9 +9,9 @@ const Navbar = () => {
   };
 
   return (
-    <section className="sticky top-0 z-50 flex justify-between items-center h-15 mx-auto px-4 text-white">
-    <div className='flex justify-between items-center h-18 max-w-[1240px] mx-auto px-4 text-white'>
-      <h1 className="text-primary text-xl font-bold">.Savvi</h1>
+    <section className="sticky top-0 z-50 flex justify-between items-center h-20 mx-auto px-4 text-white">
+    <div className='flex justify-between items-center h-20 max-w-[1240px] mx-auto px-4 text-white'>
+      <h1 className="font-mono text-white text-xl font-bold">Savvi</h1>
       <ul className='hidden md:flex'>
         <li className='p-4 hover:text-gray'><a href="#" className="no-underline text-current hover:text-tertiary"></a></li>
       </ul>
