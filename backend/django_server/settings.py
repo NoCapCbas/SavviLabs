@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     # Custom Apps
     'core',
     'users',
+    'translator',
+    'password_generator',
+    'code_launch',
 ]
 
 MIDDLEWARE = [
@@ -93,17 +96,24 @@ WSGI_APPLICATION = 'django_server.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': 'postgres_db',
-        'PORT': '5432',
+if RUNNING_LOCAL:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    } 
+else: 
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('POSTGRES_DB'),
+            'USER': os.environ.get('POSTGRES_USER'),
+            'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+            'HOST': 'postgres_db',
+            'PORT': '5432',
+        }
     }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -195,3 +205,27 @@ SIMPLE_JWT = {
 
 # SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
 # SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'SERVER_LOG.log',
+        },
+        'console': {
+            'class': 'logging.StreamHandler', 
+        },
+    },
+    'loggers': {
+        'password_generator': {
+            'handlers': ['file', 'console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+

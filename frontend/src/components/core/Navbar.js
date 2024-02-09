@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { IoIosArrowDropdown } from "react-icons/io";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -9,21 +9,17 @@ const Navbar = () => {
   };
 
   return (
-    <section className="sticky top-0 z-50 flex justify-between items-center h-20 mx-auto px-4 text-white">
-    <div className='flex justify-between items-center h-20 max-w-[1240px] mx-auto px-4 text-white'>
-      <h1 className="font-mono text-white text-xl font-bold">Savvi</h1>
-      <ul className='hidden md:flex'>
-        <li className='p-4 hover:text-gray'><a href="#" className="no-underline text-current hover:text-tertiary"></a></li>
-      </ul>
-      <div onClick={handleNav} className='block md:hidden'>
-          {nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20} />}
+    <section className="sticky top-0 z-50 flex justify-between items-center h-18 mx-auto px-4 text-white">
+      <div className='flex justify-between items-center h-full mx-auto px-4 text-white'>
+        <h1 className="text-primary font-mono text-3xl font-bold px-2 h-full">Savvi</h1>
+        <div classNameName="flex">
+          <h2 className="font-mono text-white text-l font-bold">Translate</h2>
+        </div>
+        <div className="h-full flex px-1">
+          <a className="text-2xl" onClick={handleNav}><IoIosArrowDropdown /></a>
+        </div>
+            
       </div>
-      <ul className={nav ? 'fixed left-0 top-24 w-[100%] h-full border-r border-r-gray-900 bg-background ease-in-out duration-500' : 'ease-in-out duration-500 fixed left-[-100%]'}> 
-          <li className='p-4 border-b border-gray-600'>Login</li>
-          <li className='p-4 border-b border-gray-600'>Sign Up</li>
-          <li className='p-4'></li>
-      </ul>
-    </div>
     </section>
   );
 };

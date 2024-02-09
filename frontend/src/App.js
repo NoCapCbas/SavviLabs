@@ -1,12 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
-import Navbar from './components/core/Navbar';
-import Footer from './components/core/Footer';
-import Hero from './components/core/Hero';
-import Newsletter from './components/core/Newsletter';
-// import Blog from './components/Blog';
-// import Login from './components/users/Login';
+
+// Main app components
+import Translate from './components/translate/Translate';
+import CodeLaunch from './components/code_launch/CodeLaunch';
 
 
 
@@ -21,26 +20,13 @@ const client = axios.create({
 
 function App() {
 
-  // const [message, setMessage] = useState('');
-  //
-  // useEffect(() => {
-  //   client.get("/api/hello")
-  //   .then(function(res) {
-  //     setMessage(res.data.message);
-  //   })
-  //   .catch(function(error) {
-  //     setMessage('Error');
-  //   });
-  // }, []);
-
   return (
-    <div>
-      <Navbar /> 
-      <Hero />
-      {/* <Blog />*/}
-      <Newsletter />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/code-launch' element={<CodeLaunch />} />
+        <Route path='/translate' element={<Translate />} />
+      </Routes>
+    </Router>
   );
 
 };
