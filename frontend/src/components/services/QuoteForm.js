@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "./ui/card"
+import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "../ui/card"
 import { Label } from "../ui/label"
-import { Input } from "@/components/ui/input"
-import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
+import { Input } from "../ui/input"
+import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "../ui/select"
+import { Textarea } from "../ui/textarea"
+import { Button } from "../ui/button"
 
 export default function QuoteForm() {
   return (

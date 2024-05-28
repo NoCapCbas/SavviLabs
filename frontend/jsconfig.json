@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES6",                          // Specify ECMAScript target version
-    "module": "commonjs",                     // Specify module code generation
-    "allowSyntheticDefaultImports": true,     // Allow default imports from modules with no default export
-    "baseUrl": "./",                          // Base directory to resolve non-relative module names
+    "target": "ES6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],  // Map paths for cleaner imports
+      "@components/*": ["src/components/*"],
       "@utils/*": ["src/utils/*"],
       "@styles/*": ["src/styles/*"]
     },
-    "jsx": "react"                            // Specify JSX code generation: 'react' for React 16, 'react-jsx' for React 17+
+    "jsx": "react"
   },
-  "include": ["src/**/*"],                    // Include all files in the 'src' directory
-  "exclude": ["node_modules", "build"]        // Exclude 'node_modules' and 'build' directories
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build"]
 }
+
