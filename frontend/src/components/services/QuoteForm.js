@@ -6,10 +6,24 @@ import { Input } from "../ui/input"
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "../ui/select"
 import { Textarea } from "../ui/textarea"
 import { Button } from "../ui/button"
+import background from "../../assets/blob-scene-haikei.svg"
 
 export default function QuoteForm() {
+  const backgroundStyle = {
+    backgroundImage: `url(${background})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    // color: 'white' // Optional: Change text color for better contrast
+  };
   return (
-    <Card className="mx-auto max-w-2xl">
+    <section style={backgroundStyle} className="flex items-center justify-center w-full py-12 md:py-24 lg:py-32 box-border">    
+    <Card className="max-w-2xl px-4 md:px-6">
       <CardHeader>
         <CardTitle>Contact Us</CardTitle>
         <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
@@ -87,5 +101,7 @@ export default function QuoteForm() {
         </form>
       </CardContent>
     </Card>
+    </section>
+
   )
 }

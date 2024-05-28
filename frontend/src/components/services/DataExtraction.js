@@ -17,6 +17,7 @@ const DataExtraction = () => {
     <NavBar />
     <Hero />
     <DataExtractionInfo />
+    <QuoteForm />
     <Footer />
 
     </div>
