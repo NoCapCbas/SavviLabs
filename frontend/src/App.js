@@ -4,8 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 
 // Main app components
-import Translate from './components/translate/Translate';
-import CodeLaunch from './components/code_launch/CodeLaunch';
+import DataExtraction from './components/services/DataExtraction';
 
 
 
@@ -23,8 +22,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/code-launch' element={<CodeLaunch />} />
-        <Route path='/translate' element={<Translate />} />
+        <Route path='/services/data-extraction' element={<DataExtraction />} />
       </Routes>
     </Router>
   );

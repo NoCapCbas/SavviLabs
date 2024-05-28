@@ -57,9 +57,6 @@ INSTALLED_APPS = [
     # Custom Apps
     'core',
     'users',
-    'translator',
-    'password_generator',
-    'code_launch',
 ]
 
 MIDDLEWARE = [

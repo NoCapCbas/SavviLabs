@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 import Hero from './Hero';
-import Pricing from './Pricing';
+import DataExtractionInfo from './DataExtractionInfo';
+import QuoteForm from './QuoteForm';
 import Footer from './Footer';
 
-const CodeLaunch = () => {
+const DataExtraction = () => {
 
   useEffect(() => {
-    document.title = 'CodeLaunch';
+    document.title = 'SavviLabs - Data Extraction';
   }, []);
 
   return (
     <div>
+
     <NavBar />
     <Hero />
-    <Pricing />
+    <DataExtractionInfo />
     <Footer />
 
     </div>
@@ -22,4 +24,4 @@ const CodeLaunch = () => {
   );
 };
 
-export default CodeLaunch;
+export default DataExtraction;
