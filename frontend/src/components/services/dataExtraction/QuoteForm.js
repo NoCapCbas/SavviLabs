@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "../ui/card"
-import { Label } from "../ui/label"
-import { Input } from "../ui/input"
-import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "../ui/select"
-import { Textarea } from "../ui/textarea"
-import { Button } from "../ui/button"
-import background from "../../assets/blob-scene-haikei.svg"
+import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "../../ui/card"
+import { Label } from "../../ui/label"
+import { Input } from "../../ui/input"
+import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "../../ui/select"
+import { Textarea } from "../../ui/textarea"
+import { Button } from "../../ui/button"
+import background from "../../../assets/blob-scene-haikei.svg"
 
 export default function QuoteForm() {
   const backgroundStyle = {
@@ -95,7 +95,7 @@ export default function QuoteForm() {
             <Label htmlFor="comments">Comments/Questions</Label>
             <Textarea className="min-h-[100px]" id="comments" placeholder="Enter your comments or questions" />
           </div>
-          <Button className="bg-[#715df2] w-full hover:bg-[#212121]" type="submit">
+          <Button className="bg-[#715df2] w-full hover:bg-[#8B7AF4]" type="submit">
             Submit
           </Button>
         </form>

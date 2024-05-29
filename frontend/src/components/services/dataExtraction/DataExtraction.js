@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from './NavBar';
+import NavBar from '../../core/NavBar';
 import Hero from './Hero';
-import DataExtractionInfo from './DataExtractionInfo';
+import Info from './Info';
 import QuoteForm from './QuoteForm';
-import Footer from './Footer';
+import Footer from '../../core/Footer';
 
 const DataExtraction = () => {
 
@@ -16,7 +16,7 @@ const DataExtraction = () => {
 
     <NavBar />
     <Hero />
-    <DataExtractionInfo />
+    <Info />
     <QuoteForm />
     <Footer />
 

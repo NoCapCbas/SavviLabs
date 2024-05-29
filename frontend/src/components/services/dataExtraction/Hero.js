@@ -1,6 +1,6 @@
 import React from 'react';
 import { Code } from 'lucide-react';
-import background from "../../assets/wave-haikei.svg"
+import background from "../../../assets/wave-haikei.svg"
 
 
 const Hero = () => {
@@ -35,7 +35,7 @@ const Hero = () => {
           </p>
         </div>
         <p className='text-lg font-bold text-slate-300'>Effortlessly obtain clean, structured data from the web without the complexities of developing or maintaining your own scrapers. Let us handle the hard work, so you can focus on making data-driven decisions.</p>
-        <button className='flex flex-row bg-[#715df2] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-white justify-center items-center'>
+        <button className='flex flex-row bg-[#715df2] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-white justify-center items-center hover:bg-[#8B7AF4]'>
           <span>Request Quote</span>
         </button>
       </div>

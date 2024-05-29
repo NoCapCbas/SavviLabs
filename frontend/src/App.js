@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 
 // Main app components
-import DataExtraction from './components/services/DataExtraction';
+import DataExtraction from './components/services/dataExtraction/DataExtraction';
 
 
 
