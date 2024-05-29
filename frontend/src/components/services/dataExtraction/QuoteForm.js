@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react';
 
 import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "../../ui/card"
 import { Label } from "../../ui/label"
@@ -8,7 +8,7 @@ import { Textarea } from "../../ui/textarea"
 import { Button } from "../../ui/button"
 import background from "../../../assets/blob-scene-haikei.svg"
 
-export default function QuoteForm() {
+const QuoteForm = forwardRef((props, ref) => {
   const backgroundStyle = {
     backgroundImage: `url(${background})`,
     backgroundSize: 'cover',
@@ -22,7 +22,7 @@ export default function QuoteForm() {
     // color: 'white' // Optional: Change text color for better contrast
   };
   return (
-    <section style={backgroundStyle} className="flex items-center justify-center w-full py-12 md:py-24 lg:py-32 box-border">    
+    <section ref={ref} style={backgroundStyle} className="flex items-center justify-center w-full py-12 md:py-24 lg:py-32 box-border">    
     <Card className="flex flex-col max-w-2xl px-4 md:px-6 ">
       <CardHeader>
         <CardTitle>Contact Us</CardTitle>
@@ -104,4 +104,6 @@ export default function QuoteForm() {
     </section>
 
   )
-}
+});
+
+export default QuoteForm;
