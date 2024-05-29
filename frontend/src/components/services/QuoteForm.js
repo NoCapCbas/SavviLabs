@@ -29,7 +29,7 @@ export default function QuoteForm() {
         <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
       </CardHeader>
       <CardContent className="flex h-full">
-        <form className="flex flex-col space-y-2 h-full">
+        <form className="flex flex-col space-y-2 h-full w-full">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="first-name">First Name</Label>
