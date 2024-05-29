@@ -23,13 +23,13 @@ export default function QuoteForm() {
   };
   return (
     <section style={backgroundStyle} className="flex items-center justify-center w-full py-12 md:py-24 lg:py-32 box-border">    
-    <Card className="flex flex-col max-w-2xl px-4 md:px-6 max-h-full">
+    <Card className="flex flex-col max-w-2xl px-4 md:px-6 ">
       <CardHeader>
         <CardTitle>Contact Us</CardTitle>
         <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
       </CardHeader>
-      <CardContent className="h-full">
-        <form className="space-y-4">
+      <CardContent className="flex h-full">
+        <form className="flex flex-col space-y-2 h-full">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="first-name">First Name</Label>
@@ -95,7 +95,7 @@ export default function QuoteForm() {
             <Label htmlFor="comments">Comments/Questions</Label>
             <Textarea className="min-h-[100px]" id="comments" placeholder="Enter your comments or questions" />
           </div>
-          <Button className="w-full" type="submit">
+          <Button className="bg-[#715df2] w-full hover:bg-[#212121]" type="submit">
             Submit
           </Button>
         </form>

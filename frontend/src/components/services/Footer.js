@@ -2,49 +2,23 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className='max-w-[1240px] mx-auto py-12 px-[80px] grid lg:grid-cols-3 gap-8 text-gray-300'>
-      <div>
-        <h1 className='flex flex-row w-full text-3xl font-bold text-white'>
-          <span className="m-2 text-[#af33f2]">SavviLabs</span>
-        </h1>
-        <p className='py-4'></p>
+    <footer className="bg-[#212121] text-gray-400 py-3 md:py-6">
+      <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-col items-start gap-4">
+          <div className="flex items-center gap-2">
+            <span className="text-lg font-semibold text-gray-50">Savvi Labs</span>
+          </div>
+          <p className="text-sm">
+            Savvi Labs specializes in web scraping public data.
+          </p>
+        </div>
       </div>
-      <div className='lg:col-span-2 flex flex-row-reverse justify-between mt-6'>
-{/*
-    <div>
-        <h6 className='font-medium text-gray-400'>Solutions</h6>
-        <ul>
-            <li className='py-2 text-sm'>Analytics</li>
-            <li className='py-2 text-sm'>Marketing</li>
-            <li className='py-2 text-sm'>Commerce</li>
-            <li className='py-2 text-sm'>Insights</li>
-        </ul>
-    </div>
-    <div>
-        <h6 className='font-medium text-gray-400'>Support</h6>
-        <ul>
-            <li className='py-2 text-sm'>Pricing</li>
-            <li className='py-2 text-sm'>Documentation</li>
-        </ul>
-    </div>
-    <div>
-        <h6 className='font-medium text-gray-400'>Company</h6>
-        <ul>
-            <li className='py-2 text-sm'>Blog</li>
-        </ul>
-    </div>
-*/}
-    <div>
-        <h6 className='font-medium text-gray-400'>Legal</h6>
-        <ul>
-            <li className='py-2 text-sm'>Claim</li>
-            <li className='py-2 text-sm'>Policy</li>
-            <li className='py-2 text-sm'>Terms</li>
-        </ul>
-    </div>
+
+      <div className="container mx-auto px-4 md:px-6 mt-8 text-center">
+      <p className="text-sm">© 2024 Savvi Labs. All rights reserved.</p>
       </div>
-    </div>
-  );
+    </footer>  
+  )
 };
 
 export default Footer;
