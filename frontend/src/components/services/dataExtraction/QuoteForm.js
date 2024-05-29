@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { useState, forwardRef } from 'react';
 
 import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "../../ui/card"
 import { Label } from "../../ui/label"
@@ -9,6 +9,7 @@ import { Button } from "../../ui/button"
 import background from "../../../assets/blob-scene-haikei.svg"
 
 const QuoteForm = forwardRef((props, ref) => {
+
   const backgroundStyle = {
     backgroundImage: `url(${background})`,
     backgroundSize: 'cover',
@@ -21,6 +22,57 @@ const QuoteForm = forwardRef((props, ref) => {
     textAlign: 'center',
     // color: 'white' // Optional: Change text color for better contrast
   };
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    company: '',
+    phone: '',
+    email: '',
+    budget: '',
+    timeframe: '',
+    urls: '',
+    comments: '',
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleSelectChange = (id, value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Send form data to backend API
+    try {
+      const response = await fetch('https://your-backend-api-endpoint.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        // Handle successful response
+        console.log('Form submitted successfully!');
+      } else {
+        // Handle error response
+        console.error('Form submission failed!');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  };
+
   return (
     <section ref={ref} style={backgroundStyle} className="flex items-center justify-center w-full py-12 md:py-24 lg:py-32 box-border">    
     <Card className="flex flex-col max-w-2xl px-4 md:px-6 ">
@@ -62,12 +114,12 @@ const QuoteForm = forwardRef((props, ref) => {
                   <SelectValue placeholder="Select budget" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="0-5000">$0 - $5,000</SelectItem>
-                  <SelectItem value="5000-10000">$5,000 - $10,000</SelectItem>
-                  <SelectItem value="10000-20000">$10,000 - $20,000</SelectItem>
-                  <SelectItem value="20000-50000">$20,000 - $50,000</SelectItem>
-                  <SelectItem value="50000-100000">$50,000 - $100,000</SelectItem>
-                  <SelectItem value="100000-plus">$100,000+</SelectItem>
+                  <SelectItem value="0-50">$0 - $50</SelectItem>
+                  <SelectItem value="50-250">$50 - $250</SelectItem>
+                  <SelectItem value="250-500">$250 - $500</SelectItem>
+                  <SelectItem value="500-1000">$500 - $1,000</SelectItem>
+                  <SelectItem value="1000-5000">$1,000 - $5,000</SelectItem>
+                  <SelectItem value="5000-plus">$5,000+</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -89,11 +141,11 @@ const QuoteForm = forwardRef((props, ref) => {
           </div>
           <div className="space-y-2">
             <Label htmlFor="urls">URLs to Scrape</Label>
-            <Textarea className="min-h-[100px]" id="urls" placeholder="Enter URLs separated by commas" />
+            <Textarea className="min-h-[100px]" id="urls" placeholder="Enter URLs separated by commas" style={{ resize: 'none' }} />
           </div>
           <div className="space-y-2">
             <Label htmlFor="comments">Comments/Questions</Label>
-            <Textarea className="min-h-[100px]" id="comments" placeholder="Enter your comments or questions" />
+            <Textarea className="min-h-[100px]" id="comments" placeholder="Enter your comments or questions" style={{ resize: 'none' }} />
           </div>
           <Button className="bg-[#715df2] w-full hover:bg-[#8B7AF4]" type="submit">
             Submit
