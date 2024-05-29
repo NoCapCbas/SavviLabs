@@ -1,10 +1,26 @@
 import React from 'react';
 import { Code } from 'lucide-react';
+import background from "../../assets/wave-haikei.svg"
+
+
 const Hero = () => {
+
+  const backgroundStyle = {
+    backgroundImage: `url(${background})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    // color: 'white' // Optional: Change text color for better contrast
+  };
 
 
   return (
-    <div className='text-white relative'>
+    <section style={backgroundStyle} className='text-white relative'>
       <div className='absolute inset-0 z-[-1] flex justify-center items-center'>
       </div>
       <div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center px-[10px]'>
@@ -23,7 +39,7 @@ const Hero = () => {
           <span>Request Quote</span>
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 
