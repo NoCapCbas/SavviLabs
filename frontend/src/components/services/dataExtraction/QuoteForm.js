@@ -54,7 +54,7 @@ const QuoteForm = forwardRef((props, ref) => {
     e.preventDefault();
     // Send form data to backend API
     try {
-      const response = await fetch('https://your-backend-api-endpoint.com/submit', {
+      const response = await fetch('http://localhost:8080/api/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -81,35 +81,35 @@ const QuoteForm = forwardRef((props, ref) => {
         <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
       </CardHeader>
       <CardContent className="flex h-full">
-        <form className="flex flex-col space-y-2 h-full w-full">
+        <form onSubmit={handleSubmit} className="flex flex-col space-y-2 h-full w-full">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="first-name">First Name</Label>
-              <Input id="first-name" placeholder="John" />
+              <Input id="first-name" placeholder="John" value={formData.firstName} onChange={handleChange}/>
             </div>
             <div className="space-y-2">
               <Label htmlFor="last-name">Last Name</Label>
-              <Input id="last-name" placeholder="Doe" />
+              <Input id="last-name" placeholder="Doe" value={formData.lastName} onChange={handleChange}/>
             </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="company">Company Name</Label>
-            <Input id="company" placeholder="Acme Inc." />
+            <Input id="company" placeholder="Acme Inc." value={formData.company} onChange={handleChange}/>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="phone">Phone</Label>
-              <Input id="phone" placeholder="+1 (555) 555-5555" />
+              <Input id="phone" placeholder="+1 (555) 555-5555" value={formData.phone} onChange={handleChange}/>
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" placeholder="john@example.com" type="email" />
+              <Input id="email" placeholder="john@example.com" type="email" value={formData.email} onChange={handleChange}/>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="budget">Approximate Budget</Label>
-              <Select id="budget">
+              <Select id="budget" value={formData.budget} onValueChange={(value) => handleSelectChange('budget', value)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select budget" />
                 </SelectTrigger>
@@ -125,7 +125,7 @@ const QuoteForm = forwardRef((props, ref) => {
             </div>
             <div className="space-y-2">
               <Label htmlFor="timeframe">Time Frame</Label>
-              <Select id="timeframe">
+              <Select id="timeframe" value={formData.timeframe} onValueChange={(value) => handleSelectChange('timeframe', value)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select time frame" />
                 </SelectTrigger>
@@ -141,11 +141,11 @@ const QuoteForm = forwardRef((props, ref) => {
           </div>
           <div className="space-y-2">
             <Label htmlFor="urls">URLs to Scrape</Label>
-            <Textarea className="min-h-[100px]" id="urls" placeholder="Enter URLs separated by commas" style={{ resize: 'none' }} />
+            <Textarea className="min-h-[100px]" id="urls" placeholder="Enter URLs separated by commas" value={formData.urls} onChange={onChange} style={{ resize: 'none' }} />
           </div>
           <div className="space-y-2">
             <Label htmlFor="comments">Comments/Questions</Label>
-            <Textarea className="min-h-[100px]" id="comments" placeholder="Enter your comments or questions" style={{ resize: 'none' }} />
+            <Textarea className="min-h-[100px]" id="comments" placeholder="Enter your comments or questions" value={formData.urls} onChange={onChange} style={{ resize: 'none' }} />
           </div>
           <Button className="bg-[#715df2] w-full hover:bg-[#8B7AF4]" type="submit">
             Submit
