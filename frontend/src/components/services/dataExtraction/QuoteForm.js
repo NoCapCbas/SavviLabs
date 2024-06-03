@@ -6,9 +6,42 @@ import { Input } from "../../ui/input";
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "../../ui/select";
 import { Textarea } from "../../ui/textarea";
 import { Button } from "../../ui/button";
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "../../ui/alert";
+
+import { Check, AlertCircle } from 'lucide-react';
 import background from "../../../assets/blob-scene-haikei.svg";
 
+
+function AlertSuccess() {
+  return (
+    <Alert variant="success" className="fixed bottom-4 w-[80%] min-w-[300px] bg-white">
+      <Check className="h-4 w-4" />
+      <AlertTitle>Successful Submission!</AlertTitle>
+      <AlertDescription>
+        Your quote submission was successful.
+      </AlertDescription>
+    </Alert>
+  );
+}
+
+function AlertDestructive() {
+  return (
+    <Alert variant="destructive" className="fixed bottom-4 w-[80%] min-w-[300px] bg-white">
+      <AlertCircle className="h-4 w-4" />
+      <AlertTitle>Error</AlertTitle>
+      <AlertDescription>
+        There was an error with your form submission.
+      </AlertDescription>
+    </Alert>
+  );
+}
+
 const QuoteForm = forwardRef((props, ref) => {
+  const [alert, setAlert] = useState(null)
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -47,13 +80,19 @@ const QuoteForm = forwardRef((props, ref) => {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        console.log('Form submitted successfully');
+        setAlert('success');
       } else {
-        console.log('Failed to submit form');
+        setAlert('error'); 
       }
     } catch (error) {
+      setAlert('error');
       console.error('Error submitting form:', error);
     }
+
+    setTimeout(() => {
+      setAlert(null);
+    }, 6000);
+
   };
 
   const backgroundStyle = {
@@ -68,6 +107,7 @@ const QuoteForm = forwardRef((props, ref) => {
     textAlign: 'center',
   };
 
+
   return (
     <section ref={ref} style={backgroundStyle} className="flex items-center justify-center w-full py-12 md:py-24 lg:py-32 box-border">
       <Card className="flex flex-col max-w-2xl px-4 md:px-6 ">
@@ -80,7 +120,7 @@ const QuoteForm = forwardRef((props, ref) => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="firstName">First Name</Label>
-                <Input id="firstName" placeholder="John" value={formData.firstName} onChange={handleChange} />
+                <Input id="firstName" placeholder="John" value={formData.firstName} onChange={handleChange} required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="lastName">Last Name</Label>
@@ -89,7 +129,7 @@ const QuoteForm = forwardRef((props, ref) => {
             </div>
             <div className="space-y-2">
               <Label htmlFor="company">Company Name</Label>
-              <Input id="company" placeholder="Acme Inc." value={formData.company} onChange={handleChange} />
+              <Input id="company" placeholder="Acme Inc." value={formData.company} onChange={handleChange} required />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -98,13 +138,13 @@ const QuoteForm = forwardRef((props, ref) => {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" placeholder="john@example.com" type="email" value={formData.email} onChange={handleChange} />
+                <Input id="email" placeholder="john@example.com" type="email" value={formData.email} onChange={handleChange} required />
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="budget">Approximate Budget</Label>
-                <Select id="budget" onValueChange={(value) => handleSelectChange("budget", value)}>
+                <Select id="budget" onValueChange={(value) => handleSelectChange("budget", value)} required >
                   <SelectTrigger>
                     <SelectValue placeholder="Select budget" />
                   </SelectTrigger>
@@ -120,16 +160,16 @@ const QuoteForm = forwardRef((props, ref) => {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="timeFrame">Time Frame</Label>
-                <Select id="timeFrame" onValueChange={(value) => handleSelectChange("timeFrame", value)}>
+                <Select id="timeFrame" onValueChange={(value) => handleSelectChange("timeFrame", value)} required >
                   <SelectTrigger>
                     <SelectValue placeholder="Select time frame" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="1-2-weeks">1-2 Weeks</SelectItem>
-                    <SelectItem value="1-month">1 Month</SelectItem>
-                    <SelectItem value="2-3-months">2-3 Months</SelectItem>
-                    <SelectItem value="3-6-months">3-6 Months</SelectItem>
-                    <SelectItem value="6-months-plus">6 Months+</SelectItem>
+                    <SelectItem value="1-2_weeks">1-2 Weeks</SelectItem>
+                    <SelectItem value="1_month">1 Month</SelectItem>
+                    <SelectItem value="2-3_months">2-3 Months</SelectItem>
+                    <SelectItem value="3-6_months">3-6 Months</SelectItem>
+                    <SelectItem value="6_months_plus">6 Months+</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -148,6 +188,8 @@ const QuoteForm = forwardRef((props, ref) => {
           </form>
         </CardContent>
       </Card>
+      {alert === 'success' && <AlertSuccess />}
+      {alert === 'error' && <AlertDestructive />}
     </section>
   );
 });
