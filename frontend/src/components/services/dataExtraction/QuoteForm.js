@@ -109,14 +109,14 @@ const QuoteForm = forwardRef((props, ref) => {
 
 
   return (
-    <section ref={ref} style={backgroundStyle} className="flex items-center justify-center w-full py-12 md:py-24 lg:py-32 box-border">
-      <Card className="flex flex-col max-w-2xl px-4 md:px-6 ">
+    <section ref={ref} style={backgroundStyle} className="flex items-center justify-center w-full py-6 md:py-24 lg:py-32 min-h-[900px] border-box">
+      <Card className="flex flex-col max-w-2xl px-4 md:px-6">
         <CardHeader>
           <CardTitle>Contact Us</CardTitle>
           <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
         </CardHeader>
-        <CardContent className="flex h-full">
-          <form className="flex flex-col space-y-2 h-full w-full" onSubmit={handleSubmit}>
+        <CardContent className="flex">
+          <form className="flex flex-col space-y-2 w-full" onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="firstName">First Name</Label>

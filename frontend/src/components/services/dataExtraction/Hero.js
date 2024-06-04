@@ -28,7 +28,7 @@ const Hero = ({
       <div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center px-[10px]'>
         <p className='text-[#fff] font-bold p-2'>
         </p>
-        <h1 className='md:text-7xl sm:text-4xl text-2xl font-bold md:py-6'>
+        <h1 className='md:text-7xl sm:text-4xl text-3xl font-bold md:py-6'>
           Custom Web Scraping Services
         </h1>
         <div className='flex justify-center items-center'>
