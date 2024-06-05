@@ -25,12 +25,12 @@ services:
     depends_on:
       - postgres_db
 
-  frontend:
+  savvi_frontend:
     container_name: savvi_frontend
     build: 
       context: ./frontend
     volumes:
-      - frontend:/app/build
+      - savvi_frontend:/app/build
 
   nginx:
     container_name: nginx
@@ -38,14 +38,14 @@ services:
       context: ./nginx
     volumes: 
       - static:/static
-      - frontend:/var/www/frontend
+      - savvi_frontend:/var/www/frontend
     ports:
       - "80:80"
     depends_on:
       - backend
-      - frontend
+      - savvi_frontend
  
 volumes:
   static:
-  frontend:
+  savvi_frontend:
   postgres_data:
