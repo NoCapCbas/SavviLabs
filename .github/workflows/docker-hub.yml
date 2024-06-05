@@ -14,14 +14,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps: 
-    - uses: actions/checkout@v5  # Update to a version that supports Node.js 20
+    - uses: actions/checkout@latest  # Update to the latest version that supports Node.js 20
     - name: Build the docker image
       run: docker build -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend:latest ./frontend
 
   test:
     runs-on: ubuntu-latest
     steps: 
-    - uses: actions/checkout@v5  # Update to a version that supports Node.js 20
+    - uses: actions/checkout@latest  # Update to the latest version that supports Node.js 20
     - name: Test the docker image
       run: docker-compose -f frontend/docker-compose.yml up -d
 
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check out the repo
-      uses: actions/checkout@v5  # Update to a version that supports Node.js 20
+      uses: actions/checkout@latest  # Update to the latest version that supports Node.js 20
     
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
