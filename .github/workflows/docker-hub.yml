@@ -24,9 +24,14 @@ jobs:
     steps: 
       - uses: actions/checkout@v4
       - name: Test the docker image
-        run: docker run -d --name test-frontend -p 80:80 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend:latest
-
+        run: |
+          docker run -d --name test-frontend -p 80:80 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend:latest
+          # Add any necessary test commands here
+          sleep 10 # Wait for the container to be ready
+          docker stop test-frontend
+          docker rm test-frontend
   push_to_registry:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
