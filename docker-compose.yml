@@ -1,29 +1,29 @@
 version: '3.7'
 
 services: 
-  postgres_db:
-    image: postgres:16.1
-    container_name: savvi_postgres
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: savvi
-      POSTGRES_PASSWORD: cbas
+  # postgres_db:
+  #   image: postgres:16.1
+  #   container_name: savvi_postgres
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   environment:
+  #     POSTGRES_USER: savvi
+  #     POSTGRES_PASSWORD: cbas
     # restart: always # only on deployment
 
-  backend:
-    container_name: savvi_backend
-    build: 
-      context: ./backend
-    ports: 
-      - "8000:8000"
-    # restart: always # only on deployment
-    env_file:
-      - .env
-    volumes:
-      - static:/app/static
-    depends_on:
-      - postgres_db
+  # backend:
+  #   container_name: savvi_backend
+  #   build: 
+  #     context: ./backend
+  #   ports: 
+  #     - "8000:8000"
+  #   # restart: always # only on deployment
+  #   env_file:
+  #     - .env
+  #   volumes:
+  #     - static:/app/static
+  #   depends_on:
+  #     - postgres_db
 
   savvi_frontend:
     container_name: savvi_frontend
@@ -32,20 +32,20 @@ services:
     volumes:
       - savvi_frontend:/app/build
 
-  nginx:
-    container_name: nginx
-    build:
-      context: ./nginx
-    volumes: 
-      - static:/static
-      - savvi_frontend:/var/www/frontend
-    ports:
-      - "80:80"
-    depends_on:
-      - backend
-      - savvi_frontend
- 
-volumes:
-  static:
-  savvi_frontend:
-  postgres_data:
+#   nginx:
+#     container_name: nginx
+#     build:
+#       context: ./nginx
+#     volumes: 
+#       - static:/static
+#       - savvi_frontend:/var/www/frontend
+#     ports:
+#       - "80:80"
+#     depends_on:
+#       - backend
+#       - savvi_frontend
+#  
+# volumes:
+#   static:
+#   savvi_frontend:
+#   postgres_data:
