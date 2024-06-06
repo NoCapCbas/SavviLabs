@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: savvilabs
 
 jobs:
   build:
@@ -16,14 +16,14 @@ jobs:
     steps: 
       - uses: actions/checkout@v4
       - name: Build the docker image
-        run: docker build -t ${{ env.IMAGE_NAME }}-frontend:latest ./frontend
+        run: docker build -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend:latest ./frontend
 
   test:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2  # Latest version that supports Node.js 20
       - name: Test the docker image
-        run: docker run -d --name test-frontend -p 80:80 ${{ env.IMAGE_NAME }}-frontend:latest
+        run: docker run -d --name test-frontend -p 80:80 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend:latest
 
   push_to_registry:
     runs-on: ubuntu-latest
@@ -44,7 +44,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.IMAGE_NAME }}-frontend
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
