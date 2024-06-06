@@ -45,7 +45,7 @@ services:
 #       - backend
 #       - savvi_frontend
 #  
-# volumes:
+volumes:
 #   static:
-#   savvi_frontend:
+  savvi_frontend:
 #   postgres_data:
