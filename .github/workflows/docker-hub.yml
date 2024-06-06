@@ -1,4 +1,4 @@
-name: Build, Test, and Push Frontend Docker Image to Docker Hub
+name: Build and Push Frontend Docker Image to Docker Hub
 
 on: 
   push:
@@ -11,7 +11,7 @@ env:
   IMAGE_NAME: savvilabs
 
 jobs:
-  build:
+  build_and_push:
     runs-on: ubuntu-latest
 
     steps:
