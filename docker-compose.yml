@@ -15,7 +15,6 @@ services:
     container_name: savvi_backend
     build: 
       context: ./backend
-      dockerfile: go.Dockerfile
     ports: 
       - "8000:8000"
     # restart: always # only on deployment
