@@ -10,6 +10,7 @@ env:
   REGISTRY: cbasny
   FRONTEND_IMAGE_NAME: savvi_frontend
   BACKEND_IMAGE_NAME: savvi_backend
+  CADDY_IMAGE_NAME: savvi_caddy
 
 jobs:
   build:
@@ -66,3 +67,16 @@ jobs:
         tags: ${{ steps.meta_backend.outputs.tags }}
         labels: ${{ steps.meta_backend.outputs.labels }}
 
+    - name: Extract metadata for caddy image
+      id: meta_caddy
+      uses: docker/metadata-action@v4
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.CADDY_IMAGE_NAME }}
+
+    - name: Build and push caddy Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: ./caddy
+        push: true
+        tags: ${{ steps.meta_caddy.outputs.tags }}
+        labels: ${{ steps.meta_caddy.outputs.labels }}

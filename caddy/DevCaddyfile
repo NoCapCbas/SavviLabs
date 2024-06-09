@@ -1,0 +1,8 @@
+# Main configuration for HTTPS
+localhost {
+  log
+
+  reverse_proxy /api/* http://savvi_backend:8000
+
+  reverse_proxy /* http://savvi_frontend:3001
+}
