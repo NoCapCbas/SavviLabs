@@ -15,8 +15,6 @@ services:
     container_name: savvi_frontend
     build: 
       context: ./frontend
-    volumes:
-      - savvi_frontend:/app/build
 
   caddy:
     image: caddy:latest
