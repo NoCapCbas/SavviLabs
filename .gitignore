@@ -40,8 +40,6 @@ Thumbs.db
 *.tgz
 *.tmp
 TODO.md
-Dockerfile.*
-docker-compose*.yml
 
 # Environment variables
 .env
