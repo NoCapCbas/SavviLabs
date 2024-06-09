@@ -11,19 +11,18 @@ services:
   #     POSTGRES_PASSWORD: cbas
     # restart: always # only on deployment
 
-  # backend:
-  #   container_name: savvi_backend
-  #   build: 
-  #     context: ./backend
-  #   ports: 
-  #     - "8000:8000"
-  #   # restart: always # only on deployment
-  #   env_file:
-  #     - .env
-  #   volumes:
-  #     - static:/app/static
-  #   depends_on:
-  #     - postgres_db
+  backend:
+    container_name: savvi_backend
+    build: 
+      context: ./backend
+      dockerfile: go.Dockerfile
+    ports: 
+      - "8000:8000"
+    # restart: always # only on deployment
+    env_file:
+      - .env
+    # depends_on:
+    #   - postgres_db
 
   savvi_frontend:
     container_name: savvi_frontend
@@ -46,6 +45,5 @@ services:
 #       - savvi_frontend
 #  
 volumes:
-#   static:
   savvi_frontend:
 #   postgres_data:
