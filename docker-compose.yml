@@ -30,20 +30,7 @@ services:
       context: ./frontend
     volumes:
       - savvi_frontend:/app/build
-
-#   nginx:
-#     container_name: nginx
-#     build:
-#       context: ./nginx
-#     volumes: 
-#       - static:/static
-#       - savvi_frontend:/var/www/frontend
-#     ports:
-#       - "80:80"
-#     depends_on:
-#       - backend
-#       - savvi_frontend
 #  
 volumes:
   savvi_frontend:
-#   postgres_data:
+  # postgres_data:
