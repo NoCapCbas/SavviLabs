@@ -8,8 +8,8 @@ on:
 
 env:
   REGISTRY: cbasny
-  IMAGE_NAME: savvilabs_frontend
-  IMAGE_NAME: savvilabs_backend
+  FRONTEND_IMAGE_NAME: savvilabs_frontend
+  BACKEND_IMAGE_NAME: savvilabs_backend
 
 jobs:
   build:
