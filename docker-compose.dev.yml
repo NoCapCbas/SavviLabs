@@ -20,8 +20,6 @@ services:
     image: caddy:latest
     restart: unless-stopped
     container_name: savvi_caddy 
-    build:
-      context: ./caddy
     ports:
       - "80:80"
       - "443:443"
