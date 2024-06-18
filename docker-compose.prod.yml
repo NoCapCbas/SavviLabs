@@ -2,8 +2,8 @@ version: '3.7'
 
 services: 
 
-  backend:
-    container_name: savvi_backend
+  backend_users:
+    container_name: savvi_backend_users
     build: 
       context: ./backend
     ports: 
